@@ -34,7 +34,8 @@ export function ContactPage() {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:4000/api/contact', {
+      const apiBase = (import.meta.env.VITE_API_URL || 'http://localhost:4000') + '/api';
+      const res = await fetch(`${apiBase}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

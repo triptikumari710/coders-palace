@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import logoDark from '../../assets/logo.png';
+import logoLight from '../../assets/logo1.png';
 
 const navLinks = [
   { label: 'Services', path: '/services' },
@@ -42,7 +44,7 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <img
-              src={isDark ? '/src/assets/logo.png' : '/src/assets/logo1.png'}
+              src={isDark ? logoDark : logoLight}
               alt="Coders Palace"
               className="h-24 w-auto object-contain"
               onError={(e) => {
